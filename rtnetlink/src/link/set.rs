@@ -137,4 +137,9 @@ impl LinkSetRequest {
         self.message.nlas.push(Nla::NetNsFd(fd));
         self
     }
+    
+    pub fn tx_queue_len(mut self, len: u32) -> Self {
+        self.message.nlas.push(Nla::TxQueueLen(len));
+        self
+    }
 }
